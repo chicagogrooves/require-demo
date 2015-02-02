@@ -1,12 +1,12 @@
-define("counter", [], function () {
-  Session.setDefault("counter", 0);
+define("counter", ["counterName"], function (counterName) {
+  Session.setDefault(counterName, 0);
 
   return {
     get: function () {
-      return Session.get("counter");
+      return Session.get(counterName);
     },
     increment: function () {
-      Session.set("counter", Session.get("counter") + 1);
+      Session.set(counterName, Session.get(counterName) + 1);
     }
   };
 });

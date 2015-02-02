@@ -1,4 +1,8 @@
 if (Meteor.isClient) {
+  define("counterName", [], function(){
+    return "counter";
+  })
+
   var counter = require("counter");
 
   Template.hello.helpers({
