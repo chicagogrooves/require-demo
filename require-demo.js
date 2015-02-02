@@ -3,7 +3,9 @@ if (Meteor.isClient) {
     return "counter";
   })
 
-  var counter = require("counter");
+  var Counter = require("counter");
+  var counter = new Counter();
+  var counter = new Counter();
 
   Template.hello.helpers({
     counter: function () {
