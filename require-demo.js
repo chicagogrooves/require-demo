@@ -1,11 +1,5 @@
-if (Meteor.isClient) {
-  define("counterName", [], function(){
-    return "counter";
-  })
-
-  var Counter = require("counter");
-  var counter = new Counter();
-  var counter = new Counter();
+define("hello/helpers", ["counter"], function(Counter){
+  var counter = new Counter;
 
   Template.hello.helpers({
     counter: function () {
@@ -19,10 +13,8 @@ if (Meteor.isClient) {
       counter.increment();
     }
   });
-}
+});
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+if (Meteor.isClient) {
+  require("hello/helpers");
 }

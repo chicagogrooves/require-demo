@@ -1,5 +1,6 @@
-define("counter", ["counterName"], function (counterName) {
+define("counter", [], function () {
   var currentIndex = 0;
+  var counterName = "counter";
 
   return function Counter () {
       var indexedName = counterName + "-" + currentIndex;
